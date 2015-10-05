@@ -1,0 +1,13 @@
+{
+  "name": "macarronis",
+  "version": "1.0.0",
+  "description": "Teste frontend para Pmweb",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass": "^1.0.0",
+    "grunt-spritesmith": "^4.7.1"
+  }
+}
