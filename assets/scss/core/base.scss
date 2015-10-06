@@ -1,0 +1,38 @@
+html{
+  color: #000;
+  font-size: 18px;
+  font-family: $contentFont;
+  font-weight: $light;
+  color: $textColor;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headingFont;
+}
+
+a {
+  color: $baseColor;
+  text-decoration: none;
+}
+
+input, textarea, select{
+  box-sizing: border-box;
+  color: $textColor;
+  font-weight: $normal;
+  font-family: $contentFont;
+
+  @include placeholder{
+    color: $alternateColor;
+  }
+}
+button{
+  box-sizing: border-box;
+  color: $textColor;
+  font-weight: $normal;
+  font-family: $contentFont;
+  text-align: center;
+}

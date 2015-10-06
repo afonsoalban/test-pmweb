@@ -1,0 +1,206 @@
+@mixin absoluteAlign($x,$y){
+  position: absolute;
+  top: $y;
+  left: $x;
+  -moz-transform: translate(-#{$x},-#{$y});
+  -o-transform: translate(-#{$x},-#{$y});
+  -ms-transform: translate(-#{$x},-#{$y});
+  -webkit-transform: translate(-#{$x},-#{$y});
+  transform: translate(-#{$x},-#{$y});
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin bp-large {
+  @media only screen and (max-width: 73.750em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 63.750em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin animacao($tempo:200ms){
+  @include transition(all $tempo);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin animation (
+  $delay, 
+  $duration, 
+  $animation,
+  $count: infinite, // count: infinite ou <number>
+  $direction: normal, //direction: normal, alternate, reverse, alternate-reverse
+  $mode: forwards, // fill-mode: forwards, none, backwards, both
+  $ease: ease //ease ease-in ease-out ease-in-out linear cubic-bezier(0.1, 0.7, 1.0, 0.1)
+  ) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-iteration-count: $count;
+  -webkit-animation-direction: $direction;
+  -webkit-animation-fill-mode: $mode;
+  -webkit-animation-timing-function: $ease;
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  -o-animation-iteration-count: $count;
+  -o-animation-direction: $direction;
+  -o-animation-fill-mode: $mode;
+  -o-animation-timing-function: $ease;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-iteration-count: $count;
+  animation-direction: $direction;
+  animation-fill-mode: $mode;
+  animation-timing-function: $ease;
+  }
+
+@mixin letter-spacing($value){
+ letter-spacing: ($value/1000) + em;
+}
+
+@mixin hifen($value: auto){
+  -moz-hyphens: $value;
+  -webkit-hyphens: $value;
+  -ms-hyphens: $value;
+  hyphens: $value;
+}
+
+%backface{
+ -webkit-perspective: 1000;
+ -webkit-backface-visibility: hidden;
+}
+
+@mixin columns($quantidade, $tamanho, $espaco: normal, $divisor: medium none #000){
+  -webkit-columns: $quantidade $tamanho;
+     -moz-columns: $quantidade $tamanho;
+          columns: $quantidade $tamanho;
+
+  -webkit-column-gap: $espaco;
+  -moz-column-gap: $espaco;
+  column-gap: $espaco;
+
+  -webkit-column-rule: $divisor;
+  -moz-column-rule: $divisor;
+  column-rule: $divisor;
+}
+
+@mixin filter( $filter ){
+  -webkit-filter: $filter;
+  filter: $filter;
+}
+
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+@mixin colunas($colunas, $margem){
+  $tamanho: ($margem * ($colunas - 1) ) / $colunas;
+  
+  float: left;
+  margin-left: $margem;
+  width: calc(#{100 / $colunas}% - #{$tamanho});
+
+  &:nth-child(#{$colunas}n+1){
+    clear: left;
+    margin-left: 0;
+  }
+}
