@@ -1,0 +1,39 @@
+#cupcake{
+	min-height: 720px;
+	overflow: hidden;
+
+	.content{
+		@include clearfix;
+	}
+	.conteudo{
+		line-height: 1.4em;
+		position: relative;
+		width: 23%;
+		z-index: 10;
+
+		&.esquerda{
+			float: left;
+			text-align: right;
+		}
+		&.direita{
+			float: right;
+			text-align: left;
+		}
+		.bloco-feature{
+			margin: 85px 0;
+		}
+	}
+	.cupcake{
+		//@include absoluteAlign(50%, 50%);
+		position: absolute;
+		left: calc(50% - 215px);
+		//width: 430px;
+		z-index: 5;
+	}
+	h2{
+		color: $highlight;
+		font-size: 16px;
+		font-weight: $bold;
+		margin-bottom: 10px;
+	}
+}
