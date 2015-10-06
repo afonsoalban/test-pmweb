@@ -1,3 +1,22 @@
+#header{
+	position: absolute;
+	
+	.logo-simples{
+		display: block;
+		margin: 40px auto 0;
+		text-align: center;
+	}
+}
+
+#booking{
+	height: 290px;
+
+	h1{
+		font-size: 75px;
+		margin-top: 50px;
+	}
+}
+
 #apresentacao{
 	.texto{
 		padding-top: 50px;

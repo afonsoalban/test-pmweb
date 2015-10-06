@@ -1,0 +1,26 @@
+#booking{
+	background: url(../images/bg.jpg) no-repeat center;
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	&::before{
+		background: rgba($preto, .55);
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	h1{
+		@include absoluteAlign(50%, 50%);
+		color: $branco;
+		font: normal 146px $alternativeFont;
+		z-index: 10;
+	}
+}
