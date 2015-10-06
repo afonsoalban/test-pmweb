@@ -27,6 +27,7 @@ hr{
   background: $borderColor;
   display: block;
   margin: 55px auto;
-  width: 296px;
+  max-width: 296px;
+  width: 50%;
   height: 2px;
 }
