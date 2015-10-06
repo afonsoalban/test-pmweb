@@ -1,0 +1,89 @@
+//FONTS VAR
+$headingFont: "Proxima Nova", sans-serif; //PESOS: 400it, 700, 900it 
+$contentFont: "Novecento", sans-serif; //PESOS: 300it, 300, 700, 700it
+$alternativeFont: "Alwars in my heart", cursive;
+
+$thin: 			100;
+$extralight: 	200;
+$light:			300;
+$normal:		400;
+$medium:		500;
+$semibold:		600;
+$bold:			700;
+$extrabold:		800;
+$black:			900;
+
+$headingWeight: $black;
+$contentWeight: $light;
+
+// ALWAYS IN MY HEART
+@font-face {
+    font-family: 'Alwars in my heart';
+    src: url('../fonts/always_in_my_heart-webfont.eot');
+    src: url('../fonts/always_in_my_heart-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/always_in_my_heart-webfont.woff2') format('woff2'),
+         url('../fonts/always_in_my_heart-webfont.woff') format('woff'),
+         url('../fonts/always_in_my_heart-webfont.ttf') format('truetype'),
+         url('../fonts/always_in_my_heart-webfont.svg#always_in_my_heartregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// NOVECENTO
+@font-face {
+    font-family: 'Novecento';
+    src: url('../fonts/novecentowide-demibold-webfont.eot');
+    src: url('../fonts/novecentowide-demibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentowide-demibold-webfont.woff2') format('woff2'),
+         url('../fonts/novecentowide-demibold-webfont.woff') format('woff'),
+         url('../fonts/novecentowide-demibold-webfont.ttf') format('truetype'),
+         url('../fonts/novecentowide-demibold-webfont.svg#novecento_widedemibold') format('svg');
+    font-weight: $semibold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Novecento';
+    src: url('../fonts/novecentowide-light-webfont.eot');
+    src: url('../fonts/novecentowide-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentowide-light-webfont.woff2') format('woff2'),
+         url('../fonts/novecentowide-light-webfont.woff') format('woff'),
+         url('../fonts/novecentowide-light-webfont.ttf') format('truetype'),
+         url('../fonts/novecentowide-light-webfont.svg#novecento_widelight') format('svg');
+    font-weight: $light;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Novecento';
+    src: url('../fonts/novecentowide-normal-webfont.eot');
+    src: url('../fonts/novecentowide-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentowide-normal-webfont.woff2') format('woff2'),
+         url('../fonts/novecentowide-normal-webfont.woff') format('woff'),
+         url('../fonts/novecentowide-normal-webfont.ttf') format('truetype'),
+         url('../fonts/novecentowide-normal-webfont.svg#novecento_widenormal') format('svg');
+    font-weight: $normal;
+    font-style: normal;
+}
+
+// PROXIMA NOVA
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proximanova-light-webfont.eot');
+    src: url('../fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-light-webfont.woff2') format('woff2'),
+         url('../fonts/proximanova-light-webfont.woff') format('woff'),
+         url('../fonts/proximanova-light-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: $light;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proximanova-regular-webfont.eot');
+    src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),
+         url('../fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('../fonts/proximanova-regular-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: $normal;
+    font-style: normal;
+}
