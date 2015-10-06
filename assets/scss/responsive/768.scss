@@ -1,0 +1,13 @@
+.lista-doces{
+	li{
+		@include colunas(3, 0px);
+
+		&:nth-child(10){
+			display: none;
+		}
+	}
+	img{
+		width: 33.333vw;
+		height: 33.333vw;
+	}
+}

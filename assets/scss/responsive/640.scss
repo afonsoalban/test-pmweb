@@ -3,3 +3,17 @@
 		padding-top: 50px;
 	}
 }
+
+.lista-doces{
+	li{
+		@include colunas(2, 0px);
+
+		&:nth-child(10){
+			display: block;
+		}
+	}
+	img{
+		width: 50vw;
+		height: 50vw;
+	}
+}

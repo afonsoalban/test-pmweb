@@ -23,16 +23,16 @@
 
 //RESPONSIVE
 @media screen and (min-width:1600px){
-	@import 'responsive/1600';
+	//@import 'responsive/1600';
 }
 @media screen and (max-width:1024px) {
 	@import 'responsive/1024';
 }
 @media screen and (max-width:768px){
-	//@import 'responsive/768';
+	@import 'responsive/768';
 }
 @media screen and (max-width: 640px){
-	//@import 'responsive/640';
+	@import 'responsive/640';
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	// coisas para monitores RETINA aqui :)
