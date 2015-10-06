@@ -1,0 +1,28 @@
+$mainWidth: 100%;
+$padding: 4vw;
+
+.container {
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.content {
+  margin: 0 auto;
+  position: relative;
+  max-width: $mainWidth;
+}
+.wrapper{
+  padding-left: $padding;
+  padding-right: $padding;
+}
+.wrapper-full{
+  padding: $padding;
+}
+
+hr{
+  background: $borderColor;
+  display: block;
+  margin: 55px auto;
+  width: 296px;
+  height: 2px;
+}
