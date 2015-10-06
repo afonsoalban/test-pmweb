@@ -1,0 +1,43 @@
+//CORE
+@import 'core/_colors';
+@import 'core/_fonts';
+@import 'core/reset';
+@import 'core/_mixins';
+//@import 'core/_flexbox';
+//@import 'core/animations';
+@import 'sprites';
+//@import 'core/_icons';
+@import 'core/base';
+
+//TEMPLATE
+@import 'template/main';
+@import 'template/header';
+//@import 'template/content';
+@import 'template/footer';
+
+//MODULES
+@import 'modules/booking';
+@import 'modules/apresentacao';
+@import 'modules/doces';
+@import 'modules/cupcake';
+
+//RESPONSIVE
+@media screen and (min-width:1600px){
+	@import 'responsive/1600';
+}
+@media screen and (max-width:1024px) {
+	@import 'responsive/1024';
+}
+@media screen and (max-width:768px){
+	//@import 'responsive/768';
+}
+@media screen and (max-width: 640px){
+	//@import 'responsive/640';
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	// coisas para monitores RETINA aqui :)
+	//@import 'responsive/retina';
+}
+@media print{
+	@import 'responsive/print';
+}
