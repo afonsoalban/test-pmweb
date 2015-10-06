@@ -1,5 +1,5 @@
-$mainWidth: 100%;
-$padding: 4vw;
+$mainWidth: 940px;
+$padding: 8vw;
 
 .container {
   margin: 0;
@@ -12,11 +12,15 @@ $padding: 4vw;
   max-width: $mainWidth;
 }
 .wrapper{
+  margin: auto;
   padding-left: $padding;
   padding-right: $padding;
+  max-width: $mainWidth;
 }
 .wrapper-full{
+  margin: auto;
   padding: $padding;
+  max-width: $mainWidth;
 }
 
 hr{
