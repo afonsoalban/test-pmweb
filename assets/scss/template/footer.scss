@@ -1,0 +1,40 @@
+#footer{
+	background: $preto;
+	padding: 55px 0 35px;
+	text-align: center;
+
+	a:hover{
+		@include transform( scale(.90) );
+		opacity: .8;
+	}
+
+	.sociais{
+		font-size: 0;
+		text-align: center;
+
+		li{
+			display: inline-block;
+			margin: 0 30px;
+		}
+		a{
+			@include animacao;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.facebook{
+		@include sprite($facebook);
+	}
+	.instagram{
+		@include sprite($insta);
+	}
+	hr{
+		background: $branco;
+	}
+	.logo-rodape{
+		@include sprite($icone);
+		display: block;
+		margin: auto;
+	}
+
+}
