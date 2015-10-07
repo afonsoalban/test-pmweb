@@ -148,9 +148,11 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 			ease: Back.easeOut
 		});
 		TweenLite.fromTo('#reserva-container', 2, {
-			y: '300px'
+			y: '300px',
+			opacity: 0
 		}, {
 			y: '0px',
+			opacity: 1,
 			delay: 1
 		});
 	}
