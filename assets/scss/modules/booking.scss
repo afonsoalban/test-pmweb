@@ -1,7 +1,7 @@
 #booking{
 	background: url(../images/bg2.jpg) no-repeat top;
 	background-size: cover;
-	overflow: hidden;
+	//overflow: hidden;
 	position: relative;
 	width: 100%;
 	height: 100vh;
@@ -30,6 +30,7 @@
 	position: absolute;
 	bottom: 50px;
 	left: 0;
+	text-align: center;
 	width: 100%;
 	z-index: 10;
 }
@@ -158,6 +159,68 @@
 
 		&:hover{
 			background: #474747;
+		}
+	}
+}
+
+#calendario{
+	background: $branco;
+	box-shadow: 2px 2px 3px rgba($preto, .2);
+	box-sizing: border-box;
+	padding: 2px;
+	position: absolute;
+	top: calc(100% + 3px);
+	left: calc(50% - 110px);
+	width: 220px;
+
+	.header{
+		background: $alternateColor;
+		color: $branco;
+		font-size: 16px;
+		//font-weight: $bold;
+		line-height: 29px;
+		text-transform: uppercase;
+
+		a{
+			display: block;
+			margin: 9px;
+		}
+
+		.mes-anterior{
+			@include sprite($seta-esquerda);
+			float: left;
+		}
+		.mes-posterior{
+			@include sprite($seta-direita);
+			float: right;
+		}
+	}
+
+	ul{
+		@include clearfix;
+	}
+	li{
+		@include colunas(7, 0px);
+		box-sizing: border-box;
+		line-height: 27px;
+	}
+
+	.semana{
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+	.dias{
+		font-size: 14px;
+
+		li{
+			background: #e2e2e2;
+			border: 1px solid $branco;
+			cursor: pointer;
+
+			&.sel{
+				background: #6c6c6c;
+				color: $branco;
+			}
 		}
 	}
 }

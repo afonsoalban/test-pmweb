@@ -50,7 +50,6 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 
 	function triggersDesktop () {
 		$(document).on('click','.abre-calendario', function (e) {
-			e.stopPropagation();
 			alterarReserva();
 			abreCalendario(e.currentTarget);
 		});
@@ -70,11 +69,44 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 		});
 	}
 
+	function abreCalendario (botao) {
+		var $campo = $(botao).parent();
+
+		require(['modules/calendario'], function (Calendario) {
+			$campo.append( _CAL.Calendario({}) );
+
+			$(document).on('click', fechaCalendario);
+			$('#calendario').on('click', function (e){
+				e.stopPropagation();
+			});
+			$('#calendario .dias').on('click', 'li', function (e) {
+				e.preventDefault();
+				alteraDia(e.currentTarget);
+			});
+		});
+	}
+
+	function fechaCalendario () {
+		$('#calendario').remove();
+		$(document).off('click', fechaCalendario);
+	}
+
 	function fazerReserva () {
 		$('#reserva').addClass('erro');
 	}
 	function alterarReserva () {
 		$('#reserva').removeClass('erro');
+	}
+
+	function alteraDia (li) {
+		var $campo = $(li).parents('.calendario'),
+			v = $(li).text();
+
+		$('.sel').removeClass('sel');
+		$(li).addClass('sel')
+
+		$campo.find('input').val( v );
+		atualizaCampo($campo, v );
 	}
 
 	function aumentaQuantidade (botao){
