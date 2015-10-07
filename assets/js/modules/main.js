@@ -49,7 +49,58 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 	}
 
 	function triggersDesktop () {
+		$(document).on('click','.abre-calendario', function (e) {
+			e.stopPropagation();
+			abreCalendario(e.currentTarget);
+		});
 
+		$(document).on('click', '.mais', function (e) {
+			aumentaQuantidade(e.currentTarget);
+		});
+		$(document).on('click', '.menos', function (e) {
+			diminuiQuantidade(e.currentTarget);
+		});
+	}
+
+	function aumentaQuantidade (botao){
+		var $campo = $(botao).parent();
+		var valor = parseInt( $campo.find('input').val() );
+
+		valor++;
+
+		$campo.find('input').val( valor );
+		atualizaCampo($campo, valor);
+	}
+
+	function diminuiQuantidade (botao){
+		var $campo = $(botao).parent();
+		var valor = parseInt( $campo.find('input').val() );
+
+		if( valor == 1 ){
+			return;
+		}
+
+		valor--;
+
+		$campo.find('input').val( valor );
+		atualizaCampo($campo, valor);
+	}
+
+	function atualizaCampo (campo, valor){
+		var $campo = campo.find('.valor');
+		var v;
+
+		if( valor < 10 ) {
+			v = '0' + valor;
+		} else {
+			v = valor;
+		}
+
+		TweenMax.to($campo, .1, {opacity:0, scale: .9, onComplete:function(){
+			$campo.text(v);
+			TweenMax.fromTo($campo, .1, {scale: 1.1}, {scale: 1, opacity: 1});
+		}});
+		
 	}
 
 	function entrada () {
