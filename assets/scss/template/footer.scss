@@ -32,6 +32,7 @@
 		background: $branco;
 	}
 	.logo-rodape{
+		@include animacao;
 		@include sprite($icone);
 		display: block;
 		margin: auto;

@@ -1,4 +1,6 @@
 #header{
+	background: url(../images/bg2.jpg) no-repeat top;
+	background-size: cover;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -8,6 +10,17 @@
 	.wrapper{
 		position: relative;
 		z-index: 10;
+	}
+	.fundo{
+		background: rgba($preto, .6);
+		display: block;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
 	}
 
 	.logo-simples{
@@ -19,6 +32,7 @@
 
 		.texto, .maca{
 			display: block;
+			opacity: 0;
 		}
 		.texto{
 			@include sprite($lettering);
@@ -32,7 +46,7 @@
 	}
 
 	nav{
-		@include animacao;
+		//@include animacao;
 		//height: 90px;
 		line-height: 90px;
 		margin: 25px 0;
@@ -60,23 +74,12 @@
 	}
 
 	&.fechado{
-		background: url(../images/bg2.jpg) no-repeat top;
-		background-size: cover;
-
 		nav{
 			line-height: 40px;
 		}
-
-		&::before{
-			background: rgba($preto, .6);
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
+		
+		.fundo{
+			opacity: 1;
 		}
 	}
 }
