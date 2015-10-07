@@ -36,7 +36,27 @@
 #reserva{
 	@include clearfix;
 	background: $branco;
+	position: relative;
 	width: 100%;
+
+	&::before{
+		@include animacao;
+		background: $highlight;
+		color: $branco;
+		content: 'verifique os campos obrigatórios';
+		display: block;
+		font: $bold 12px $headingFont;
+		position: absolute;
+		bottom: calc(100% - 24px);
+		left: 0;
+		text-align: center;
+		width: 100%;
+		line-height: 24px;
+		z-index: -1;
+	}
+	&.erro::before{
+		bottom: 100%;
+	}
 
 	.campo-reserva, button{
 		box-sizing: border-box;

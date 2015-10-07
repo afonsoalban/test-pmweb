@@ -51,15 +51,30 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 	function triggersDesktop () {
 		$(document).on('click','.abre-calendario', function (e) {
 			e.stopPropagation();
+			alterarReserva();
 			abreCalendario(e.currentTarget);
 		});
 
 		$(document).on('click', '.mais', function (e) {
+			alterarReserva();
 			aumentaQuantidade(e.currentTarget);
 		});
 		$(document).on('click', '.menos', function (e) {
+			alterarReserva();
 			diminuiQuantidade(e.currentTarget);
 		});
+
+		$(document).on('click', '.botao-reservar', function (e) {
+			e.preventDefault();
+			fazerReserva();
+		});
+	}
+
+	function fazerReserva () {
+		$('#reserva').addClass('erro');
+	}
+	function alterarReserva () {
+		$('#reserva').removeClass('erro');
 	}
 
 	function aumentaQuantidade (botao){
@@ -100,7 +115,6 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 			$campo.text(v);
 			TweenMax.fromTo($campo, .1, {scale: 1.1}, {scale: 1, opacity: 1});
 		}});
-		
 	}
 
 	function entrada () {
