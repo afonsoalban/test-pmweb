@@ -45,7 +45,7 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 	}
 
 	function triggersMobile () {
-
+		$('.botao-menu').on('click', trataHamburger);
 	}
 
 	function triggersDesktop () {
@@ -67,6 +67,16 @@ define(['jquery', 'TweenMax'], function(jQuery, TweenMax){
 			e.preventDefault();
 			fazerReserva();
 		});
+	}
+
+	function trataHamburger (){
+		var $nav = $('#header nav');
+		
+		if( $nav.hasClass('aberto') ){
+			$nav.removeClass('aberto')
+		} else {
+			$nav.addClass('aberto')
+		}
 	}
 
 	function abreCalendario (botao) {

@@ -23,7 +23,12 @@
 		z-index: 1;
 	}
 
-	.logo-simples{
+	.botao-menu{
+		@include sprite($menu);
+		display: none;
+	}
+
+	.logo-simples, .logo-nav{
 		display: none;
 	}
 	.logo-combinado{

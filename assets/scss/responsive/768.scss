@@ -1,3 +1,49 @@
+#header{
+	background: none;
+	position: absolute;
+	
+	.logo-simples, .logo-nav{
+		display: block;
+		margin: 40px auto 0;
+		text-align: center;
+	}
+	.logo-combinado{
+		display: none;
+	}
+	.botao-menu{
+		display: block;
+
+		position: absolute;
+		top: 30px;
+		left: calc(100% + 30px);
+		z-index: 100;
+	}
+
+	nav{
+		@include transition( all 700ms ease );
+		@include transform( translateX(-100%) );
+		background: $preto;
+		margin: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 70vw;
+		max-width: 540px;
+		height: 100vh;
+
+		.global{
+			li{
+				display: block;
+				margin: 55px 0 !important;
+			}
+		}
+
+		&.aberto{
+			@include transform( translateX(0) );
+		}
+	}
+}
+
 #booking{
 	height: 350px;
 }
